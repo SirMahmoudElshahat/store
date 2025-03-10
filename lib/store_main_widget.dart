@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:udemy_store/core/app/connectivity_controller.dart';
 import 'package:udemy_store/core/app/env.variables.dart';
 import 'package:udemy_store/core/common/screens/no_network_screen.dart';
+import 'package:udemy_store/core/style/fonts/font_family_helper.dart';
+import 'package:udemy_store/core/style/fonts/font_weight_helper.dart';
 
 class Store extends StatelessWidget {
   const Store({super.key});
@@ -36,6 +38,44 @@ class Store extends StatelessWidget {
               home: Scaffold(
                 appBar: AppBar(
                   title: const Text('Store'),
+                ),
+                body: const Column(
+                  children: [
+                    // Old
+                    Text(
+                      'Old Font',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    Text(
+                      'وليد محمود',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    // New
+
+                    Text(
+                      'Old Font',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontFamily: FontFamilyHelper.poppinsEnglish,
+                        fontWeight: FontWeightHelper.bold,
+                      ),
+                    ),
+
+                    Text(
+                      'وليد محمود',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontFamily: FontFamilyHelper.cairoArabic,
+                        fontWeight: FontWeightHelper.bold,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
