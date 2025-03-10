@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:udemy_store/core/app/connectivity_controller.dart';
 import 'package:udemy_store/core/app/env.variables.dart';
 import 'package:udemy_store/core/common/screens/no_network_screen.dart';
@@ -12,26 +13,30 @@ class Store extends StatelessWidget {
       valueListenable: ConnectivityController.instance.isConnected,
       builder: (_, value, __) {
         if (value) {
-          return MaterialApp(
-            title: 'Store',
-            debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
-            theme: ThemeData(
-              colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-              useMaterial3: true,
-            ),
-            builder: (context, widget) {
-              return Scaffold(
-                body: Builder(
-                  builder: (context) {
-                    ConnectivityController.instance.init();
-                    return widget!;
-                  },
+          return ScreenUtilInit(
+            designSize: const Size(375, 812),
+            minTextAdapt: true,
+            child: MaterialApp(
+              title: 'Store',
+              debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
+              theme: ThemeData(
+                colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+                useMaterial3: true,
+              ),
+              builder: (context, widget) {
+                return Scaffold(
+                  body: Builder(
+                    builder: (context) {
+                      ConnectivityController.instance.init();
+                      return widget!;
+                    },
+                  ),
+                );
+              },
+              home: Scaffold(
+                appBar: AppBar(
+                  title: const Text('Store'),
                 ),
-              );
-            },
-            home: Scaffold(
-              appBar: AppBar(
-                title: const Text('Store'),
               ),
             ),
           );
