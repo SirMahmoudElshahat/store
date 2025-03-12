@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:udemy_store/core/extensions/context_extension.dart';
 import 'package:udemy_store/core/routes/app_routes.dart';
@@ -9,21 +8,29 @@ class TestOneScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.pink,
+       backgroundColor: Colors.teal,
       appBar: AppBar(
-        title: Text('One'),
+        title: const Text('One'),
       ),
       body: Center(
-        child: TextButton(
-          onPressed: () {
-            context.pushName(AppRoutes.testTwo);
-          },
-          child: Text(
-            'Go Two Screen',
-            style: TextStyle(
-              color: Colors.white,
+        child: Column(
+          children: [
+            Center(
+              child: TextButton(
+                onPressed: () {
+                  context.pushName(AppRoutes.testTwo);
+                },
+                child: Text(
+                  'Go Two Screen',
+                  style: TextStyle(
+                    color: context.color.mainColor,
+                    fontSize: 30,
+                  ),
+                ),
+              ),
             ),
-          ),
+            Image.asset(context.assets.testImage ?? ''),
+          ],
         ),
       ),
     );
