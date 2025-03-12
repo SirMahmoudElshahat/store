@@ -4,8 +4,7 @@ import 'package:udemy_store/core/app/connectivity_controller.dart';
 import 'package:udemy_store/core/app/env.variables.dart';
 import 'package:udemy_store/core/common/screens/no_network_screen.dart';
 import 'package:udemy_store/core/routes/app_routes.dart';
-import 'package:udemy_store/core/style/fonts/font_family_helper.dart';
-import 'package:udemy_store/core/style/fonts/font_weight_helper.dart';
+import 'package:udemy_store/core/style/theme/app_theme.dart';
 
 class Store extends StatelessWidget {
   const Store({super.key});
@@ -22,10 +21,7 @@ class Store extends StatelessWidget {
             child: MaterialApp(
               title: 'Store',
               debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
-              theme: ThemeData(
-                colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-                useMaterial3: true,
-              ),
+              theme: themeDark(),
               builder: (context, widget) {
                 return Scaffold(
                   body: Builder(
