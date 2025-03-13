@@ -11,6 +11,9 @@ extension ContextExt on BuildContext {
 
   MyAssets get assets => Theme.of(this).extension<MyAssets>()!;
 
+  // style
+  TextStyle get textStyle => Theme.of(this).textTheme.displaySmall!;
+
   //Language
   String translate(String langkey) {
     return AppLocalizations.of(this)!.translate(langkey).toString();
