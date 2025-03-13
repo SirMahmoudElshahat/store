@@ -43,6 +43,8 @@ dependencies:
   flutter_dotenv: ^5.2.1
   flutter_screenutil: ^5.9.3
   flutter_native_splash: ^2.4.4
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:
@@ -80,6 +82,7 @@ flutter:
     - .env.dev
     - .env.prod
     - assets/images/
+    - lang/
 
   fonts:
     # Arabic Font

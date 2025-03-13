@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:udemy_store/core/language/app_localizations.dart';
 import 'package:udemy_store/core/style/theme/color_extension.dart';
 import 'package:udemy_store/core/style/theme/image_extension.dart';
 
@@ -9,7 +10,12 @@ extension ContextExt on BuildContext {
   // images
 
   MyImages get assets => Theme.of(this).extension<MyImages>()!;
-  
+
+  //Language
+  String translate(String langkey) {
+    return AppLocalizations.of(this)!.translate(langkey).toString();
+  }
+
   Future<dynamic> pushName(String routeName, {Object? arguments}) {
     return Navigator.of(this).pushNamed(routeName, arguments: arguments);
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:udemy_store/core/extensions/context_extension.dart';
+import 'package:udemy_store/core/language/lang_keys.dart';
 import 'package:udemy_store/core/routes/app_routes.dart';
 
 class TestOneScreen extends StatelessWidget {
@@ -8,9 +9,9 @@ class TestOneScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       backgroundColor: Colors.teal,
+      backgroundColor: Colors.teal,
       appBar: AppBar(
-        title: const Text('One'),
+        title: Text(context.translate(LangKeys.appName)),
       ),
       body: Center(
         child: Column(
