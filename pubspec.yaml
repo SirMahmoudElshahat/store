@@ -83,6 +83,7 @@ flutter:
     - .env.prod
     - assets/images/
     - lang/
+    - assets/svg/
 
   fonts:
     # Arabic Font

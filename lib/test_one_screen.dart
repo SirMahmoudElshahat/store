@@ -30,7 +30,6 @@ class TestOneScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Image.asset(context.assets.testImage ?? ''),
           ],
         ),
       ),

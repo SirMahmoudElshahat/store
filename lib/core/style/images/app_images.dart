@@ -1,6 +1,33 @@
 class AppImages {
-  static const String noNetwork = 'assets/images/no_network.jpg';
-  static const String pageUnderBuild = 'assets/images/page_under_build.jpg';
-  static const String testDark = 'assets/images/dark_test_image.png';
-  static const String testLight = 'assets/images/light_test_image.png';
+  //Images
+  static const noNetwork = 'assets/images/no_network.jpg';
+  static const pageUnderBuild = 'assets/images/page_under_build.jpg';
+  static const emptyScreen = 'assets/images/empty_screen.png';
+
+  // Customer
+  static const userAvatar = 'assets/images/user.png';
+  static const bigIconNavBarDark = 'assets/images/big_nav_bar_dark.png';
+  static const bigIconNavBarLight = 'assets/images/big_nav_bar_light.png';
+  static const homeBgDark = 'assets/images/home_bg_dark.png';
+  static const homeBgLight = 'assets/images/home_bg_light.png';
+
+  // Admin
+  static const drawerImage = 'assets/images/drawer_image.png';
+  static const categoriesDrawer = 'assets/images/categories_drawer.png';
+  static const productsDrawer = 'assets/images/products_drawer.png';
+  static const usersDrawer = 'assets/images/users_drawer.png';
+
+  //Svg
+  static const search = 'assets/svg/search.svg';
+  static const carShop = 'assets/svg/car_shop.svg';
+  static const homeTab = 'assets/svg/home_tab_icon.svg';
+  static const profileTab = 'assets/svg/profile_tab_icon.svg';
+  static const favouritesTab = 'assets/svg/favourite_tab_icon.svg';
+  static const categoriesTab = 'assets/svg/categories_tap_icon.svg';
+  static const darkMode = 'assets/svg/dark_mode.svg';
+  static const language = 'assets/svg/language.svg';
+  static const buildVersion = 'assets/svg/build_version.svg';
+  static const buildDeveloper = 'assets/svg/build_developer.svg';
+  static const logout = 'assets/svg/logout.svg';
+  static const backButton = 'assets/svg/arrow_back.svg';
 }

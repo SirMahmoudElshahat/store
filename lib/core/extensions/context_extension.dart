@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:udemy_store/core/language/app_localizations.dart';
+import 'package:udemy_store/core/style/theme/assets_extension.dart';
 import 'package:udemy_store/core/style/theme/color_extension.dart';
-import 'package:udemy_store/core/style/theme/image_extension.dart';
 
 extension ContextExt on BuildContext {
   //color
@@ -9,7 +9,7 @@ extension ContextExt on BuildContext {
 
   // images
 
-  MyImages get assets => Theme.of(this).extension<MyImages>()!;
+  MyAssets get assets => Theme.of(this).extension<MyAssets>()!;
 
   //Language
   String translate(String langkey) {
