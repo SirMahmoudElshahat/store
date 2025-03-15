@@ -6,20 +6,36 @@ import 'package:udemy_store/core/extensions/context_extension.dart';
 import 'package:udemy_store/core/language/lang_keys.dart';
 import 'package:udemy_store/core/utils/app_regex.dart';
 
-class LoginTextForm extends StatefulWidget {
-  const LoginTextForm({super.key});
+class SignUpTextForm extends StatefulWidget {
+  const SignUpTextForm({super.key});
 
   @override
-  State<LoginTextForm> createState() => _LoginTextFormState();
+  State<SignUpTextForm> createState() => _SignUpTextFormState();
 }
 
-class _LoginTextFormState extends State<LoginTextForm> {
+class _SignUpTextFormState extends State<SignUpTextForm> {
   bool isShowPassword = true;
   @override
   Widget build(BuildContext context) {
     return Form(
       child: Column(
         children: [
+          //Name
+          CustomFadeInRight(
+            duration: 200,
+            child: CustomTextField(
+              controller: TextEditingController(),
+              hintText: context.translate(LangKeys.fullName),
+              keyboardType: TextInputType.emailAddress,
+              validator: (value) {
+                if (value == null || value.isEmpty || value.length < 4) {
+                  return context.translate(LangKeys.validName);
+                }
+                return null;
+              },
+            ),
+          ),
+          SizedBox(height: 25.h),
           //Email
           CustomFadeInRight(
             duration: 200,
