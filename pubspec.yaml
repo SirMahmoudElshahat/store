@@ -46,6 +46,17 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   animate_do: ^4.2.0
+  get_it: ^8.0.3
+
+  #Bloc
+  flutter_bloc: ^9.1.0
+
+  #shared preferences
+  shared_preferences: ^2.5.2
+
+  #freezed
+  freezed_annotation: ^3.0.0
+  
 
 dev_dependencies:
   flutter_test:
@@ -59,6 +70,8 @@ dev_dependencies:
   flutter_lints: ^5.0.0
   flutter_launcher_icons: ^0.14.3
   very_good_analysis: ^7.0.0
+  build_runner: ^2.4.15
+  freezed: ^3.0.0-0.0.dev
 
 flutter_icons:
   android: true

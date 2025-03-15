@@ -2,7 +2,11 @@ import 'dart:io';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:udemy_store/core/app/bloc_observer.dart';
 import 'package:udemy_store/core/app/env.variables.dart';
+import 'package:udemy_store/core/di/injection_container.dart';
+import 'package:udemy_store/core/service/shared_pref/shared_pref.dart';
 import 'package:udemy_store/store_main_widget.dart';
 
 void main() async {
@@ -20,6 +24,12 @@ void main() async {
           ),
         )
       : await Firebase.initializeApp();
+
+  await SharedPref().instantiatePreferences();
+
+  await setupInjector();
+
+  Bloc.observer = AppBlocObserver();
 
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitDown,
