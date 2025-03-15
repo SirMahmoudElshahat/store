@@ -46,6 +46,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   animate_do: ^4.2.0
+  get_it: ^8.0.3
 
   #Bloc
   flutter_bloc: ^9.1.0
@@ -55,6 +56,7 @@ dependencies:
 
   #freezed
   freezed_annotation: ^3.0.0
+  
 
 dev_dependencies:
   flutter_test:
