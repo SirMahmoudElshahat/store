@@ -56,6 +56,11 @@ dependencies:
 
   #freezed
   freezed_annotation: ^3.0.0
+
+  #api
+  dio: ^5.8.0+1
+  pretty_dio_logger: ^1.4.0
+  retrofit: ^4.4.2
   
 
 dev_dependencies:
@@ -72,6 +77,8 @@ dev_dependencies:
   very_good_analysis: ^7.0.0
   build_runner: ^2.4.15
   freezed: ^3.0.0-0.0.dev
+  retrofit_generator: ^9.1.9
+  json_serializable: ^6.9.4
 
 flutter_icons:
   android: true
