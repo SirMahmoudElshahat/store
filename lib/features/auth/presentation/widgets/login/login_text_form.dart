@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:udemy_store/core/common/animations/animate_do.dart';
 import 'package:udemy_store/core/common/widgets/custom_text_field.dart';
 import 'package:udemy_store/core/extensions/context_extension.dart';
 import 'package:udemy_store/core/language/lang_keys.dart';
 import 'package:udemy_store/core/utils/app_regex.dart';
+import 'package:udemy_store/features/auth/presentation/bloc/auth_bloc.dart';
+
 
 class LoginTextForm extends StatefulWidget {
   const LoginTextForm({super.key});
@@ -15,20 +18,37 @@ class LoginTextForm extends StatefulWidget {
 
 class _LoginTextFormState extends State<LoginTextForm> {
   bool isShowPassword = true;
+
+  late AuthBloc _bloc;
+
+  @override
+  void initState() {
+    super.initState();
+    _bloc = context.read<AuthBloc>();
+  }
+
+  @override
+  void dispose() {
+    _bloc.emailController.dispose();
+    _bloc.passwordController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Form(
+      key: _bloc.formKey,
       child: Column(
         children: [
           //Email
           CustomFadeInRight(
             duration: 200,
             child: CustomTextField(
-              controller: TextEditingController(),
+              controller: _bloc.emailController,
               hintText: context.translate(LangKeys.email),
               keyboardType: TextInputType.emailAddress,
               validator: (value) {
-                if (!AppRegex.isEmailValid('')) {
+                if (!AppRegex.isEmailValid(_bloc.emailController.text)) {
                   return context.translate(LangKeys.validEmail);
                 }
                 return null;
@@ -40,7 +60,7 @@ class _LoginTextFormState extends State<LoginTextForm> {
           CustomFadeInRight(
             duration: 200,
             child: CustomTextField(
-              controller: TextEditingController(),
+              controller: _bloc.passwordController,
               hintText: context.translate(LangKeys.password),
               keyboardType: TextInputType.visiblePassword,
               obscureText: isShowPassword,
