@@ -45,8 +45,12 @@ dependencies:
   flutter_native_splash: ^2.4.4
   flutter_localizations:
     sdk: flutter
-  animate_do: ^4.2.0
+  
   get_it: ^8.0.3
+
+  #UI Animation
+  animate_do: ^4.2.0
+  fluttertoast: ^8.2.12
 
   #Bloc
   flutter_bloc: ^9.1.0
@@ -61,6 +65,7 @@ dependencies:
   dio: ^5.8.0+1
   pretty_dio_logger: ^1.4.0
   retrofit: ^4.4.2
+  
   
 
 dev_dependencies:

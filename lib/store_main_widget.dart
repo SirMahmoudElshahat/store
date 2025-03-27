@@ -37,7 +37,7 @@ class Store extends StatelessWidget {
                 builder: (context, state) {
                   final cubit = context.read<AppCubit>();
                   return MaterialApp(
-                    title: 'Store',
+                    title: 'Asroo Store',
                     debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
                     theme: cubit.isDark ? themeLight() : themeDark(),
                     locale: Locale(cubit.currentLangCode),
@@ -47,22 +47,23 @@ class Store extends StatelessWidget {
                     localeResolutionCallback:
                         AppLocalizationsSetup.localeResolutionCallback,
                     builder: (context, widget) {
-                      return GestureDetector(
-                        onTap: () {
-                          FocusManager.instance.primaryFocus?.unfocus();
-                        },
-                        child: Scaffold(
-                          body: Builder(
-                            builder: (context) {
-                              ConnectivityController.instance.init();
-                              return widget!;
-                            },
-                          ),
+                      return Scaffold(
+                        body: Builder(
+                          builder: (context) {
+                            ConnectivityController.instance.init();
+                            return widget!;
+                          },
                         ),
                       );
                     },
                     onGenerateRoute: AppRoutes.onGenerateRoute,
-                    initialRoute: AppRoutes.login,
+                    initialRoute: SharedPref()
+                                .getString(PrefKeys.accessToken) !=
+                            null
+                        ? SharedPref().getString(PrefKeys.userRole) == 'admin'
+                            ? AppRoutes.homeCustomer
+                            : AppRoutes.homeAdmin
+                        : AppRoutes.login,
                   );
                 },
               ),
